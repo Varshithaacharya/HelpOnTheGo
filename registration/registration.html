@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Responsive Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="registrationcss.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="./home.html"><img src="../image/logo3.jpg"alt="Logo" class="logo"></a>
+      <div class="nav-links">
+          <a href="../home.html">Home</a>
+          <a href="#">About Us</a>
+          <div class="dropdown">
+              <a href="#">Services</a>
+              <div class="dropdown-content">
+                  <a href="../roadside assistance/roadsideassistance.html">Roadside Assistance</a>
+                  <a href="../accident recovery/accidentrecovery.html">Accident Recovery</a>
+                  <a href="../Vehicle Repair/vehiclerepair.html">Vehicle Repair</a>
+              </div>
+          </div>
+          <a href="../contact us/contactus.html">Contact</a>
+          <!-- <a href="#">Map</a> -->
+          <a href="../product.html">Products</a>
+          <a href="../Emergency contact/index.html">Emergency Contact</a>
+          <a href="../product.html"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" style="fill: rgba(236, 229, 228, 1);transform: msFilter;"><path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="17.5" cy="19.5" r="1.5"></circle></svg></a>
+      </div>
+      <a href="#" onclick="showSideBar()" id="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" id="icon" viewBox="0 0 24 24" style="fill: rgba(244, 240, 240, 1);transform: msFilter;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></a>
+  </div>
+
+    <div class="container">
+      <h1 class="form-title">Registration</h1>
+      <form action="#">
+        <div class="main-user-info">
+          <div class="user-input-box">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name"/>
+            <span class="error-message" id="fullNameError"></span>
+          </div>
+          <div class="user-input-box">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter Username"/>
+            <span class="error-message" id="usernameError"></span>
+          </div>
+          <div class="user-input-box">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email"/>
+            <span class="error-message" id="emailError"></span>
+          </div>
+          <div class="user-input-box">
+            <label for="phoneNumber">Phone number</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number"/>
+            <span class="error-message" id="phoneNumberError"></span>
+          </div>
+          <div class="user-input-box">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password"/>
+            <span class="error-message" id="passwordError"></span>
+          </div>
+          <div class="user-input-box">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password"/>
+            <span class="error-message" id="confirmPasswordError"></span>
+          </div>
+        </div>
+        <div class="form-submit-btn">
+          <input type="submit" value="Register"onclick="location.href=
+        '../home.html'">
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission for validation
+
+        // Clear previous error messages
+        document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+
+        // Get form values
+        const fullName = document.getElementById("fullName").value.trim();
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phoneNumber = document.getElementById("phoneNumber").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+        // Regular expression patterns
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phonePattern = /^[0-9]{10}$/;
+
+        let isValid = true;
+
+        // Validation checks
+        if (!fullName) {
+          document.getElementById("fullNameError").textContent = "Full Name is required.";
+          isValid = false;
+        }
+
+        if (!username) {
+          document.getElementById("usernameError").textContent = "Username is required.";
+          isValid = false;
+        }
+
+        if (!email || !emailPattern.test(email)) {
+          document.getElementById("emailError").textContent = "Please enter a valid email address.";
+          isValid = false;
+        }
+
+        if (!phoneNumber || !phonePattern.test(phoneNumber)) {
+          document.getElementById("phoneNumberError").textContent = "Please enter a valid 10-digit phone number.";
+          isValid = false;
+        }
+
+        if (!password) {
+          document.getElementById("passwordError").textContent = "Password is required.";
+          isValid = false;
+        }
+
+        if (password !== confirmPassword) {
+          document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+          isValid = false;
+        }
+
+        // If all validations pass, allow form submission
+        if (isValid) {
+          alert("Registration successful!");
+          event.currentTarget.submit(); // Submit the form if everything is valid
+        }
+      });
+    </script>
+  </body>
+</html>

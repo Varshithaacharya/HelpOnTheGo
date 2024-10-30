@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="./product.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .product-img{
+            width: 235px;
+            height: 235px;
+        }
+    </style>
+</head>
+<body>
+    <!-- navigation bar -->
+     <header>
+        <div class="nav container">
+            <!-- logo -->
+            <a href="./home.html"><img src="./image/logo3.jpg"alt="Logo" class="logo"></a>
+             <!-- Cart Icon -->
+             <i class='bx bxs-cart' style="color:#eae5e4" id="cart-icon" data-quantity="0"></i>
+             <!-- cart -->
+              <div class="cart">
+                 <h2 class="cart-title">Your Cart</h2>
+                 <!-- content -->
+                 <div class="cart-content"></div>
+                 <!-- Total -->
+                  <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">$0</div>
+                  </div>
+                  <!-- buy button -->
+                   <button type="button" class="btn-buy" onclick="location.href='paymentmethod.html'">Pay Now</button>
+                   <!-- Close Cart -->
+                   <i class='bx bx-x' id="close-cart" ></i>
+              </div>
+        </div>
+     </header>
+     <!-- Products -->
+      <section class="shop container">
+        <h2 class="section-title">Shop Products</h2>
+        <!-- Shop Content -->
+         <div class="shop-content">
+            <!-- box 1 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/compressor.jpg" alt="" class="product-img">
+                <h2 class="product-title">Compressor</h2>
+                <span class="price">$50</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 2 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/strapper.jpg"alt="" class="product-img">
+                <h2 class="product-title">Strapper</h2>
+                <span class="price">$70</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 3 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/towbelt.jpg" alt="" class="product-img">
+                <h2 class="product-title">Tow Belt</h2>
+                <span class="price">$90</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 4 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/wheel2.jpg" alt="" class="product-img">
+                <h2 class="product-title">Wheel</h2>
+                <span class="price">$50.78</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 5 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/vicegrips.jpg" alt="" class="product-img">
+                <h2 class="product-title">Vice grips</h2>
+                <span class="price">$30</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 6 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/sledgehammer.jpg" alt="" class="product-img">
+                <h2 class="product-title">Sledge Hammer</h2>
+                <span class="price">$34.08</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 7 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/patchkit.jpg" alt="" class="product-img">
+                <h2 class="product-title">Patch kit</h2>
+                <span class="price">$40</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 8 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/tireiron.jpg" alt="" class="product-img">
+                <h2 class="product-title">Tire Iron</h2>
+                <span class="price">$90</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+         </div>
+         <!-- More products -->
+         <div class="shop-content">
+            <!-- box 1 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/light.jpg" alt="" class="product-img">
+                <h2 class="product-title">Head Light</h2>
+                <span class="price">$50</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 2 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/helmet.jpg"alt="" class="product-img">
+                <h2 class="product-title">Helmet</h2>
+                <span class="price">$70</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 3 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/outfit.jpg" alt="" class="product-img">
+                <h2 class="product-title">Biker fit</h2>
+                <span class="price">$90</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 4 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/suspension.jpg" alt="" class="product-img">
+                <h2 class="product-title">Suspension</h2>
+                <span class="price">$50.78</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 5 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/wrench.jpg" alt="" class="product-img">
+                <h2 class="product-title">Socket wrench</h2>
+                <span class="price">$30</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 6 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/firstaid.jpg" alt="" class="product-img">
+                <h2 class="product-title">Firstaid Kit</h2>
+                <span class="price">$34.08</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 7 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/jumper.jpg" alt="" class="product-img">
+                <h2 class="product-title">Jumper cable</h2>
+                <span class="price">$40</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+            <!-- box 8 -->
+            <div class="product-box">
+                <!-- Stripe images should be online -->
+                <img src="./image/torch.jpg" alt="" class="product-img">
+                <h2 class="product-title">Tire Iron</h2>
+                <span class="price">$90</span>
+                <i class='bx bxs-cart-alt add-cart'></i>
+            </div>
+         </div>
+      </section>
+     <!-- Link to js -->
+      <script src="./product.js"></script>
+</body>
+</html>

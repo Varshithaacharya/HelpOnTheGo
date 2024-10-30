@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url('roadsideassistance.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.logo{
+    height: 60px;
+    width: 60px;
+    margin-left: 0;
+    border-radius: 50%;
+    position: absolute;
+    top:8px;
+    left: 4px;
+    padding: 10px;
+}
+/* Basic styles for the navigation bar */
+.navbar {
+    width: 100%; 
+    background: linear-gradient(to right, #231434, #1f1f21); 
+    opacity: 0.9;
+    /* background-color: rgba(255, 255, 255, 0.8);  */
+    position: fixed; 
+    top: 0; 
+    left:0;
+    /* margin-top: 0; */
+    box-shadow: -10 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px; 
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+
+/* Styles for navigation links */
+.nav-links{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;  /*monica*/
+}
+.nav-links.active{
+    height: 60px;
+}
+.nav-links a{
+    margin: 0 10px; /*monica before it was 15*/
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px;
+    border-radius: 4px;
+    /* position: relative; */ /*monica suggestion*/
+}
+.nav-links a:hover {
+    background-color: #8b8c8ed8;
+}
+.navbar #icon{
+    display: none;
+}
+/* Dropdown menu styles */
+.dropdown {
+    position: relative; /* Position relative for dropdown */
+}
+.dropdown-content {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position it absolutely */
+    background-color: #f8f9fa; /* Background color */
+    min-width: 200px; /* Minimum width for dropdown */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    z-index: 1; /* Ensure it appears above other elements */
+}
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+.navbar a {
+    margin: 0 15px; /* Space between links */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Padding around links */
+    border-radius: 4px;
+}
+
+/* Hover effect for links */
+.navbar a:hover {
+    background-color: #c6d3dbd8; /* Change background on hover */
+}
+h1{
+    padding-top: 10px;
+}
+.dropdown-content a{
+    color:#333;
+    padding:10px;
+    text-decoration: none;
+    display: block;
+}
+.container {
+    width: 95%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    color: black;
+    border-radius: 12px;
+    padding: 40px 50px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-title {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 8px;
+    color: black;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    font-size: 18px;
+    line-height: 1.8;
+    color: black;
+    font-weight: 600;
+    margin-top: 20px;
+}

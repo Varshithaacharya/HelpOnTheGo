@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-size: 15px;
+    margin: 0;
+    background-color: #000;
+}
+.logo{
+    height: 60px;
+    width: 60px;
+    margin-left: 0;
+    border-radius: 50%;
+    position: absolute;
+    top:8px;
+    left: 4px;
+    padding: 10px;
+}
+/* Basic styles for the navigation bar */
+.navbar {
+    width: 100%; 
+    background: linear-gradient(to right, #231434, #1f1f21); 
+    opacity: 0.9;
+    /* background-color: rgba(255, 255, 255, 0.8);  */
+    position: fixed; 
+    top: 0; 
+    left:0;
+    /* margin-top: 0; */
+    box-shadow: -10 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px; 
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+
+/* Styles for navigation links */
+.nav-links{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;  /*monica*/
+}
+.nav-links.active{
+    height: 60px;
+}
+.nav-links a{
+    margin: 0 10px; /*monica before it was 15*/
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px;
+    border-radius: 4px;
+    /* position: relative; */ /*monica suggestion*/
+}
+.nav-links a:hover {
+    background-color: #8b8c8ed8;
+}
+.navbar #icon{
+    display: none;
+}
+/* Dropdown menu styles */
+.dropdown {
+    position: relative; /* Position relative for dropdown */
+}
+.dropdown-content {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position it absolutely */
+    background-color: #f8f9fa; /* Background color */
+    min-width: 200px; /* Minimum width for dropdown */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    z-index: 1; /* Ensure it appears above other elements */
+}
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+.navbar a {
+    margin: 0 15px; /* Space between links */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Padding around links */
+    border-radius: 4px;
+}
+
+/* Hover effect for links */
+.navbar a:hover {
+    background-color: #c6d3dbd8; /* Change background on hover */
+}
+h1{
+    padding-top: 10px;
+}
+.dropdown-content a{
+    color:#333;
+    padding:10px;
+    text-decoration: none;
+    display: block;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/bg-registration-form-7.jpg") no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px;
+}
+
+.inner {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    background: #000;
+    border: 10px solid #000;
+    padding: 50px;
+    margin-top: 5% ;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+p {
+    text-align: center;
+    padding: 0 10px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    color: #fff;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-group input,
+.form-group select {
+    border: none;
+    border-bottom: 2px solid #fff;
+    display: block;
+    width: 100%;
+    padding: 10px 10px 10px 0;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    outline: none; 
+}
+
+.form-group span {
+    font-size: 15px;
+    color: #aaa;
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+.form-group input:focus,
+.form-group input:valid,
+.form-group select:focus,
+.form-group select:valid {
+    border-bottom: 2px solid #fff;
+}
+
+.form-group input:focus + span,
+.form-group input:valid + span,
+.form-group select:focus + span,
+.form-group select:valid + span {
+    top: -15px;
+    left: 0;
+    font-size: 12px;
+    color: #bbb;
+}
+
+select.form-control {
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    outline: none; 
+}
+
+select.form-control option {
+    background-color: #000;
+    color: #fff;
+}
+
+button {
+    border: none;
+    width: 180px;
+    height: 51px;
+    border: 2px solid #fff;
+    margin: auto;
+    margin-top: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    transition: color 0.3s;
+    outline: none;
+}
+
+button:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+#tollFreeDisplay {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+#tollFreeDisplay ul {
+    list-style: none;
+    padding: 0;
+}
+
+#tollFreeDisplay li {
+    margin-bottom: 10px;
+}
+
+#map { height: 350px; }
+
+@media (max-width: 767px) {
+    h3 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 14px;
+        padding: 0;
+    }
+
+    .inner {
+        padding: 30px;
+    }
+
+    button {
+        width: 150px;
+    }
+}

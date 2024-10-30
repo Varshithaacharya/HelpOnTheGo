@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contact Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+     <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+          <a href="../home.html"><img src="../image/logo3.jpg"alt="Logo" class="logo"></a>
+          <div class="nav-links">
+              <a href="../home.html">Home</a>
+              <a href="../About us/aboutusfinal.html">About Us</a>
+              <div class="dropdown">
+                  <a href="#">Services</a>
+                  <div class="dropdown-content">
+                      <a href="../roadside assistance/roadsideassistance.html">Roadside Assistance</a>
+                      <a href="../accident recovery/accidentrecovery.html">Accident Recovery</a>
+                      <a href="../Vehicle Repair/vehiclerepair.html">Vehicle Repair</a>
+                  </div>
+              </div>
+              <a href="../contact us/contactus.html">Contact</a>
+              <!-- <a href="#">Map</a> -->
+              <a href="../product.html">Products</a>
+              <a href="../Emergency contact/index.html">Emergency Contact</a>
+              <a href="../product.html"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" style="fill: rgba(236, 229, 228, 1);transform: msFilter;"><path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="17.5" cy="19.5" r="1.5"></circle></svg></a>
+          </div>
+          <a href="#" onclick="showSideBar()" id="icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" id="icon" viewBox="0 0 24 24" style="fill: rgba(244, 240, 240, 1);transform: msFilter;"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></a>
+      </div>
+    
+      </header>
+    <div class="wrapper">
+        <div class="inner">
+            <form>
+                <h3>EMERGENCY CONTACT PAGE</h3>
+                <p>Let us know about your emergency, and VELOCITY will help solve it immediately.</p>
+               <label class="form-group">
+                    <select name="emergencySituation" id="emergencySituation" class="form-control" required>
+                        <option value="" disabled selected>Select Emergency Situation</option>
+                        <option value="Brake Failure">Brake Failure</option>
+                        <option value="Car Accident">Car Accident/Medical Emergency</option>
+                        <option value="Stranded">Stranded</option>
+                        <option value="Lockout Assistance">Lockout Assistance</option>
+                        <option value="Engine Overheating">Engine Overheating</option>
+                    </select>
+                </label>
+
+                <button type="button" onclick="displayTollFreeNumbers()">Submit</button>
+                <div id="tollFreeDisplay"></div>
+                <div id="map"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        
+
+        function displayTollFreeNumbers() {
+            const type = document.getElementById("emergencySituation").value;
+            const numbers = {
+                "Brake Failure": ["OUR MECHANIC:9184890455", "TOLL FREE NUMBER:1-888850384"],
+                "Car Accident": ["EMERGENCY SERVICES:100", "TOLL FREE NUMBER:1-888-48502334"],
+                "Stranded": ["EMERGENCY SERVICES:100", "TOLL FREE NUMBER:1-888-43469049"],
+                "Lockout Assistance": ["OUR ASSISTANT:91847690585", "TOLL FREE NUMBER:1-888-47859098589"],
+                "Engine Overheating": ["OUR MECHANIC:91874938432", "TOLL FREE NUMBER:1-888-883994030"]
+            };
+
+            const display = document.getElementById("tollFreeDisplay");
+            display.innerHTML = numbers[type] ? 
+                `For ${type}, contact these numbers until we reach you: <ul><li>${numbers[type].join("</li><li>")}</li></ul>` : 
+                "Invalid service type selected.";
+        }
+        var map = L.map('map').setView([20.5937, 78.9629], 5);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+navigator.geolocation.watchPosition(success,error);
+function success(pos){
+    const lat=pos.coords.latitude;
+    const lng=pos.coords.longitude;
+    L.marker([lat,lng]).addTo(map);
+}
+function error(err){
+    if(err.code===1)
+{
+    alert("Please allow geolocation access");
+}else{
+    alert("Cannot get current location");
+}
+
+}
+    </script>
+</body>
+</html>
